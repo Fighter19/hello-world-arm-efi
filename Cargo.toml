@@ -1,0 +1,20 @@
+[package]
+name = "hello-world-arm-efi"
+version = "0.1.0"
+authors = ["Fighter19"]
+edition = "2018"
+
+[lib]
+crate_type = ["staticlib"]
+
+[dependencies]
+uefi = { version = "0.17.0", features = ["exts"] }
+uefi-services = { version = "0.14.0" }
+
+[profile.dev]
+opt-level = 0
+panic = "abort"
+
+[profile.release]
+opt-level = "z"
+panic = "abort"
