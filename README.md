@@ -2,6 +2,14 @@
 This is a project that demonstrates how to build a simple Hello World EFI application for ARM devices.
 It targets the armv6kz-none-eabihf triplet, which means the files should be executable on a Raspberry Pi with an appropriate EFI loader as well as QEMU.
 
+# Requirements
+
+ * U-Boot (tested with 1e892ef0b)
+ * lld-12
+ * cargo
+ * cargo-xbuild
+ * rustc (tested with 1.64.0)
+
 # Building
 To build this application, it's required to have built U-Boot for your ARM device and have it exported through the environment variable U_BOOT_ROOT. A version close to v2022.10 of U-Boot is expected.
 Furthermore ld.lld-12 from LLVM is required (build.sh can be altered to use other linkers, although your mileage may vary).
